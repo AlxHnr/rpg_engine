@@ -41,14 +41,8 @@
   atexit(TTF_Quit);
   
   /* SDL mixer */
-  /* Sound plays too late on windows with too high audio buffer values */
-  #ifdef __WIN32__
-    if(Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 256) < 0)
-      exit(EXIT_FAILURE);
-  #else
-    if(Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) < 0)
-      exit(EXIT_FAILURE);
-  #endif
+  if(Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 256) < 0)
+    exit(EXIT_FAILURE);
   
   atexit(Mix_CloseAudio);
   Mix_VolumeMusic(get_music_volume());
