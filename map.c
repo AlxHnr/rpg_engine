@@ -22,6 +22,7 @@ int load_tile_set(const char *tile_path)
   {
     if((temp = IMG_Load(tile_path)) == NULL)
     {
+      fprintf(stderr, "Error: Failed to load tileset file: %s\n", tile_path);
       return -1;
     }
     
