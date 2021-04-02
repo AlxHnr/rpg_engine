@@ -11,12 +11,6 @@ slightest tilt can generate 50 events. This will assign all controls to the
 analog stick. If you mess up the controls, remove the file
 `rpg_engine/joystick.conf` and start the game again.
 
-**Note**: The tileset used by the maps in this game is not included due to
-unclear licensing. You could try saving something like
-[this](https://telles0808.deviantart.com/art/RPG-Maker-VX-RTP-Tileset-159218223)
-as `rpg_engine/tileset.png`. Otherwise you would have to build your own
-maps using a free 32x32 tileset.
-
 ## Rendering a single frame
 ![rendering.gif](https://raw.github.com/AlxHnr/rpg_engine/master/rendering.gif)
 
@@ -32,6 +26,12 @@ This program requires the development files of the following libraries:
 
 Build the game using only one thread: `make -j1`. It can be started using
 `make run`.
+
+**Note**: The tileset used by the maps in this game is not included due to
+unclear licensing. You could try saving something like
+[this](https://telles0808.deviantart.com/art/RPG-Maker-VX-RTP-Tileset-159218223)
+to `./rpg_engine/tileset.png`. Otherwise you would have to build your own
+maps using a free 32x32 tileset.
 
 The map editor has to be build using `make -j1 map_editor`. It can be
 started by changing into the *rpg\_engine/* directory and running the
