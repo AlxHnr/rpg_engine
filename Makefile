@@ -8,10 +8,10 @@ LDFLAGS = `sdl-config --libs` -lSDL_gfx -lSDL_image -lSDL_ttf -lSDL_mixer
 # main application
 $(P_NAME)/$(P_NAME): $(OBJECTS:%.o=obj/%.o)
 	mkdir -p $(P_NAME)
-	$(CC) $(LDFLAGS) $(OBJECTS:%.o=obj/%.o) -o $(P_NAME)/$(P_NAME)
+	$(CC) $(OBJECTS:%.o=obj/%.o) $(LDFLAGS) -o $(P_NAME)/$(P_NAME)
 
 map_editor: obj/map.o obj/map_editor.o
-	$(CC) $(LDFLAGS) obj/map.o obj/map_editor.o -o $(P_NAME)/map_editor
+	$(CC) obj/map.o obj/map_editor.o $(LDFLAGS) -o $(P_NAME)/map_editor
 
 # compile objects
 obj/%.o: %.c
